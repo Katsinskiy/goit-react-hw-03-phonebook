@@ -1,9 +1,11 @@
-import 'modern-normalize/modern-normalize.css';
+
 import { Component } from 'react';
+
 import SectionTitle from './Section/SectionTitle';
 import ContactsForm from './ContactsForm/ContactsForm';
 import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
+
 import s from './app.module.css';
 
 import { nanoid } from 'nanoid';
@@ -16,7 +18,7 @@ class App extends Component {
 
   componentDidMount() {
     const contacts = JSON.parse(localStorage.getItem('contacts'));
-    // contacts && contacts.length
+    
     if (contacts?.length) {
       this.setState({ contacts: [...contacts] });
     }
@@ -27,8 +29,7 @@ class App extends Component {
   }
 
   onChangeFilterValue = event => {
-    // const filterValue = event.target.value;
-    // console.log('filterValue', filterValue);
+   
 
     this.setState({
       filter: event.target.value,
@@ -37,8 +38,7 @@ class App extends Component {
   compareContacts = () => {
     const { filter, contacts } = this.state;
     const normalizeFilter = filter.toLowerCase().trim();
-    // console.log('normalizeFilter: ', normalizeFilter);
-    // console.log(contacts);
+
     return contacts.filter(contact => {
       return contact.name.toLowerCase().includes(normalizeFilter);
     });
@@ -65,14 +65,14 @@ class App extends Component {
     this.setState(prevState => ({
       contacts: prevState.contacts.filter(contact => contact.id !== id),
     }));
-    // this.state.contacts.find()
+    
   };
   render() {
-    // console.log('contacts', this.state.contacts);
+
     return (
       <div className={s.wrap}>
         <SectionTitle title="Phonebook">
-          {/* в инфо приходит наш стейт с формы после сабмита и записываеться в параметр дата */}
+          { }
           <ContactsForm catchSubmitInfo={this.addContact} />
         </SectionTitle>
         <SectionTitle title="Contacts">
