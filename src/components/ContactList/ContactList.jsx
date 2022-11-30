@@ -16,9 +16,7 @@ function ContactList(props) {
             className={s.button}
             onClick={() => contactOnDelete(id)}
             type="button"
-          >
-            delete
-          </button>
+          >delete</button>
         </li>
       ))}
     </ul>

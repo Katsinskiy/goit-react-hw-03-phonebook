@@ -29,13 +29,14 @@ class App extends Component {
   }
 
   onChangeFilterValue = event => {
-   
 
     this.setState({
       filter: event.target.value,
     });
   };
+
   compareContacts = () => {
+
     const { filter, contacts } = this.state;
     const normalizeFilter = filter.toLowerCase().trim();
 
@@ -43,7 +44,9 @@ class App extends Component {
       return contact.name.toLowerCase().includes(normalizeFilter);
     });
   };
+
   addContact = data => {
+    
     const { name } = data;
     const { contacts } = this.state;
     if (
@@ -72,8 +75,7 @@ class App extends Component {
     return (
       <div className={s.wrap}>
         <SectionTitle title="Phonebook">
-          { }
-          <ContactsForm catchSubmitInfo={this.addContact} />
+        <ContactsForm catchSubmitInfo={this.addContact} />
         </SectionTitle>
         <SectionTitle title="Contacts">
           <Filter
